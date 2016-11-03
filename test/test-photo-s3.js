@@ -1,9 +1,9 @@
 var photo = require('../lib/photo-s3.js')({ staticFiles : 'test/photos', urlRoot : '' }),
 assert = require('assert'),
 request = {
-  path : 'titi/P1000666.JPG',
-  params : ['titi', 'P1000666.JPG'],
-  query : {}
+  params : ['photos', 'lake.jpg'],
+  s3Bucket : 'test-node-gallery',
+  s3Region : 'us-west-2'
 },
 response = {
   json : function(jsonResponse){

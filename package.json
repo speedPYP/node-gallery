@@ -14,12 +14,13 @@
   },
   "dependencies": {
     "ejs": "2.0.8",
-    "exif": "git://github.com/cianclarke/node-exif.git",
+    "exif": "git://github.com/gomfunkel/node-exif.git",
     "express": "4.10.7",
     "gm": "^1.17.0",
     "imagemagick-stream": "^1.1.0",
     "memory-cache": "^0.1.1",
-    "underscore": "^1.7.0"
+    "underscore": "^1.7.0",
+    "aws-sdk":"2.6.13"
   },
   "scripts": {
     "test": "node test/test-gallery.js ; node test/test-album.js ; node test/test-photo.js"
