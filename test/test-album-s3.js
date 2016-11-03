@@ -1,8 +1,9 @@
-var album = require('../lib/album-s3.js')({ bucket: 'speedpyp-test', region: 'us-west-2' , urlRoot : '' }),
+var album = require('../lib/album-s3.js')({ staticFiles : 'test/photos', urlRoot : '' }),
 assert = require('assert'),
 request = {
-  path : 'toto',
-  query : {}
+  path : 'album1',
+  s3Bucket : 'test-node-gallery',
+  s3Region : 'us-west-2'
 },
 response = {
   json : function(jsonResponse){
@@ -18,7 +19,7 @@ response = {
 },
 next =  function(){
   // call to common.render
-  assert.ok(request.data, 'Request should have data to redner');
+  assert.ok(request.data, 'Request should have data to render');
   assert.ok(request.tpl, 'Request should have a tpl to render');
   assert.ok(request.data.photos.length === 1, 'Request should have one data photos');
   console.log(__filename + ' passed ok ✓')
